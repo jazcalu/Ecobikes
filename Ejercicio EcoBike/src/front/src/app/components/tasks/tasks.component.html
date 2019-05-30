@@ -1,0 +1,84 @@
+<div class="container">
+  <div class="card" position="absolute" style="width: 35rem;">
+    <h5 class="card-header info-color white-text text-center py-4" style="background-color: #00BCD4; color:white">
+      <strong>Registra la Venta</strong>
+    </h5>
+    <div class="card-body px-lg-5 pt-3">
+      <form (submit)="addTask($event)" position="relative" id="myForm">
+        <div class="input-roup">
+          <label for="validationTooltip01">Nombre de la Tienda</label>
+          <input type="text" class="form-control" id="tiendaNom" name="tiendaNom" [(ngModel)]="tiendaNom"
+            placeholder="Ingresa tu Tienda" required>
+
+          <label for="validationTooltip01">Nombre del Producto</label>
+          <input type="text" class="form-control" id="productoNom" name="productoNom" [(ngModel)]="productoNom"
+            placeholder="Ingresa el Nombre del Producto" required>
+
+          <label for="validationTooltip01">Cantidad</label>
+          <input type="number" class="form-control" id="productoCant" name="productoCant" [(ngModel)]="productoCant"
+            placeholder="Ingresa la Cantidad del Producto" required>
+
+          <label for="validationTooltip01">Precio</label>
+          <input type="number" class="form-control" id="productoPrec" name="productoPrec" [(ngModel)]="productoPrec"
+            placeholder="Ingresa el Precio del Producto S/." required>
+
+          <label for="validationTooltip01">Vendedor Id</label>
+          <input type="text" class="form-control" id="vendedorNick" name="vendedorNick" [(ngModel)]="vendedorNick"
+            placeholder="Ingresa el Vendedor id" required>
+          <br>
+          <span class="input-roup mt-10">
+            <button type="submit" class="btn-registrar btn-block">REGISTRAR</button>
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div>
+    <br>
+    <h3 style="text-align: center; color:#3F51B5;"> <strong>Ventas de Mayo</strong></h3>
+    <br>
+    <table class="table table-striped" style="text-align: center">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th>Tienda</th>
+          <th>Producto</th>
+          <th>Cantidad</th>
+          <th>Precio S/.</th>
+          <th>Vendedor</th>
+          <th>Operaciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>
+            <input type="checkbox" [checked]="task.isDone" (click)="updateTask(task)">
+          </td>
+          <td>
+            {{ task.tiendaNom}}
+          </td>
+          <td>
+            {{ task.productoNom}}
+          </td>
+          <td>
+            {{ task.productoCant}}
+          </td>
+          <td>
+            {{ task.productoPrec}}
+          </td>
+          <td>
+            {{ task.vendedorNick}}
+          </td>
+          <td>
+            <button class="btn btn-danger" style="font-size: 15px" (click)="deleteTask(task._id)">
+              ⌫
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="container">
+    <h1></h1>
+  </div>
+</div>
