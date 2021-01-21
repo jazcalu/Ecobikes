@@ -16,7 +16,7 @@
     "mongojs": "^2.6.0",
     "mongoose": "^5.5.11",
     "ng2-charts": "^2.2.3",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.4.0"
   },
   "devDependencies": {
     "nodemon": "^1.19.0"
